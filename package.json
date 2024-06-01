@@ -1,5 +1,6 @@
 {
   "name": "todo-list-react-ts",
+  "homepage": "https://den4yk76.github.io/todo-list-react-ts/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +16,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.13.0",
     "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0"
+    "@types/react-dom": "^18.3.0",
+    "gh-pages": "^6.1.1"
   }
 }

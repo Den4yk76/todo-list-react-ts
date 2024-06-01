@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import App from "./App";
 
-test('renders learn react link', () => {
+// Mock TodoList to avoid rendering the entire component tree
+jest.mock("./components/TodoList/TodoList", () => () => (
+  <div>TodoList Component</div>
+));
+
+test("renders App component", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText("TodoList Component")).toBeInTheDocument();
 });
